@@ -1,12 +1,12 @@
 ## Projeto Final - Reprograma
 
 ### 1. Objetivo
-A proposta dessa API é construir uma base de dados com URLs de lojas falsas (Fake Store) que podem ser adicionadas e visualizadas por qualquer usuário, que pode consultar se uma URL recebida por SMS ou por e-mail consta na base de dados e, por conseguinte, tenha grande chance de se tratar de uma fraude aplicada por terceiros mal intencionados. As submissões não serão exibidas ao publico de imediato e passaram por uma checagem que atribuirá a estas uma tag específica para aumentar a credibilidade da consulta.
+A proposta dessa API é construir uma base de dados com URLs de lojas falsas (Fake Store) que podem ser adicionadas e visualizadas. É possível consultar se uma URL recebida por SMS ou por e-mail consta na base de dados e, por conseguinte, tenha grande chance de se tratar de uma fraude aplicada por terceiros mal intencionados. As submissões não serão exibidas ao público de imediato e passaram por uma checagem que atribuirá a estas uma tag específica para aumentar a credibilidade da consulta.
 
 ### 2. Justificativa
-Devido ao avanço da tecnologia, que tem proporcionado mudanças profundas na sociedade, seja no ambito das relações pessoais ou nos negócios, serviços que anteriormente eram oferecidos apenas no ambito físico, passaram a existir também no âmbito digital. Um exemplo disso são as lojas virtuais (e-commerces) que proporcianam a comodidade de se comprar qualquer produto pela Internet e poder recebê-lo em casa.
+Devido ao avanço da tecnologia, que tem proporcionado mudanças profundas na sociedade, seja no âmbito das relações pessoais ou nos negócios. Serviços que anteriormente eram oferecidos apenas no ambito físico, passaram a existir também no âmbito digital. Um exemplo disso são as lojas virtuais (e-commerces) que proporcianam a comodidade de se comprar qualquer produto pela Internet e poder recebê-lo em casa.
 
-No entanto, essa revolução digital também proporcionou um novo tipo de atividade criminosa, que opera silenciosa criando cópias de websites de lojas oficiais para capturar informações financeiras de usuários na Internet.
+No entanto, essa revolução digital também favoreceu o surgimento de um novo tipo de atividade criminosa, que opera silenciosamente criando cópias de websites de lojas oficiais para capturar informações financeiras de usuários na Internet.
 
 > Proposta de API baseada no TCC da Engenheira de Computação pela Universidade de Pernambuco, Thais Melo, que detalha o cenário atual de Fake Stores no Brasil (Novembro 2019).
 
