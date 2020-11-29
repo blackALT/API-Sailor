@@ -52,9 +52,9 @@ Para utilizar esta API é necessária a instalação das tecnologias NodeJS e Mo
 
 - *Instalação*
 
-[] 1. Faça um Fork desse repositório para seu GitHub; 
-[] 2. Clone seu repositório para seu ambiente local;
-[] 3. Abra o console e digite os comandos:
+1. Faça um Fork desse repositório para seu GitHub;
+2. Clone seu repositório para seu ambiente local;
+3. Abra o console e digite os comandos:
 
 ```
 $ npm init 
@@ -82,10 +82,10 @@ npm start
 
 ### Contribuindo com o projeto
 
-[] 1. Faça o fork do projeto
-[] 2. Crie uma branch para sua modificação (git checkout -b feature/any)
-[] 3. Faça o commit (git commit -am 'Add some any')
-[] 4. Push (git push origin feature/any)
-[] 5. Crie um novo Pull Request
+1. Faça o fork do projeto
+2. Crie uma branch para sua modificação (git checkout -b feature/any)
+3. Faça o commit (git commit -am 'Add some any')
+4. Push (git push origin feature/any)
+5. Crie um novo Pull Request
 
 [{Reprograma}](https://github.com/reprograma/)
