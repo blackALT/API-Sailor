@@ -4,7 +4,8 @@
   "description": "A proposta dessa API é construir uma base de dados com vagas de emprego por meio da qual um usuário qualquer possa fazer consultas baseadas em um ranking. Esse ranking será construído a partir dos requisitos das vagas e das tecnologias/linguagens que o usuário seja apto a fazer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/blackALT/projetoFinalReprograma#readme",
   "dependencies": {
+    "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.17",
     "nodemon": "^2.0.6"
