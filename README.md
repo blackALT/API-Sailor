@@ -72,6 +72,7 @@ npm start
 | POST         | `/urls/` | Cadastrar nova url                | Informar apenas a URL |
 | PUT          | `/urls/submissions/:id`        | Atualizar uma submissão a partir do ID    |  * Requer autenticação |
 | DELETE       | `/urls/submissions/:id`        | Deletar uma submissão a partir do ID        | * Requer autenticação |
+| DELETE       | `/urls/submissions`        | Deletar uma submissão a partir da URL        |* Requer autenticação /Filtros disponíveis: URL |
 | PATCH        | `/urls/submissions/:id`  | Atualizar atributos da submissão a partir do ID | * Requer autenticação |
 
 ### Contribuindo com o projeto
