@@ -37,7 +37,7 @@ pasta-do-projeto
 
 ### Aprendizados
 
-O Bootcamp da reprograma proporcionou um contato amplo e profundo dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização, hospedagem e configuração de aplicações na nuvem.
+O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização, hospedagem e configuração de aplicações na nuvem.
 
 ### Instruções para utilização da API, 
 
@@ -65,7 +65,7 @@ npm start
 
 | Verbo        | Recurso             | Descrição                          |
 | ------------ | --------------------| -----------------------------------|
-| GET          | `/urls`            | Retornar todas as urls submetidas e analizadas     |
+| GET          | `/urls`            | Retornar todas as urls submetidas e analisadas     |
 | GET          | `/urls/:target` | Retornar apenas as urls de alguma marca específica |
 | GET          | `/urls/submissions` | Retornar todas as urls submetidas |
 | POST         | `/urls/submissions` | Cadastrar nova url                |
