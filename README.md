@@ -1,4 +1,4 @@
-## Projeto Final - Reprograma
+## Projeto Final - Reprograma - API Sailor
 
 ### 1. Objetivo
 A proposta dessa API é construir uma base de dados com URLs de lojas falsas (Fake Store) que podem ser adicionadas e visualizadas. É possível consultar se uma URL recebida por SMS ou por e-mail consta na base de dados e, por conseguinte, tenha grande chance de se tratar de uma fraude aplicada por terceiros mal intencionados. As submissões não serão exibidas ao público de imediato e passaram por uma checagem que atribuirá a estas uma tag específica para aumentar a credibilidade da consulta.
@@ -63,15 +63,16 @@ npm start
 
 ### Rotas disponíveis
 
-| Verbo        | Recurso             | Descrição                          |
-| ------------ | --------------------| -----------------------------------|
-| GET          | `/urls`            | Retornar todas as urls submetidas e analisadas     |
-| GET          | `/urls/:target` | Retornar apenas as urls de alguma marca específica |
-| GET          | `/urls/submissions` | Retornar todas as urls submetidas |
-| POST         | `/urls/submissions` | Cadastrar nova url                |
-| PUT          | `/urls/:id`        | Atualizar uma url a partir do ID    |
-| DELETE       | `/urls/:id`        | Deletar uma url a partir do ID        |
-| PATCH        | `/urls/:id`  | Atualizar atributos (isAnalyzed, isMalicious) de uma url a partir do ID |
+| Verbo        | Recurso             | Descrição                          | OBS:                              |
+| ------------ | --------------------| -----------------------------------|-----------------------------------|
+| GET          | `/urls`            | Retornar todas as urls submetidas e analisadas | Filtros disponíveis: Target e URL |
+| GET          | `/urls/malicious` | Retornar apenas as urls classificadas como maliciosas| Filtros disponíveis: Target |
+| GET          | `/urls/submissions` | Retornar todas as urls submetidas e não analisadas | * Requer autenticação |
+| GET          | `/urls/backlog` | Retornar todas as urls | * Requer autenticação |
+| POST         | `/urls/` | Cadastrar nova url                | Informar apenas a URL |
+| PUT          | `/urls/submissions/:id`        | Atualizar uma submissão a partir do ID    |  * Requer autenticação |
+| DELETE       | `/urls/submissions/:id`        | Deletar uma submissão a partir do ID        | * Requer autenticação |
+| PATCH        | `/urls/submissions/:id`  | Atualizar atributos da submissão a partir do ID | * Requer autenticação |
 
 ### Contribuindo com o projeto
 
