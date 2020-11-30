@@ -6,7 +6,6 @@ const urls = require("./route/urlsRoute")
 
 const app = express()
 
-//mongoose.connect("mongodb://localhost:27017/urls", {
 mongoose.connect(process.env.DATABASE_URL, {  
   useNewUrlParser: true,
   useUnifiedTopology: true
