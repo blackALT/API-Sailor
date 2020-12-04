@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 require('dotenv-safe').config();
 const urls = require("./route/urlsRoute")
+const index = require("./route/index")
 
 const app = express()
 
@@ -28,7 +29,8 @@ app.use(function (req, res, next) {
       )
       next()
 })
-  
+
+app.use("/", index)
 app.use("/urls", urls);
   
 module.exports = app
