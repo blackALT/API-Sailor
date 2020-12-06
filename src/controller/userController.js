@@ -54,40 +54,6 @@ const createUser = (req, res) => {
     });
 }
 
-const deleteUser = (req, res) => {
-    console.log(req.url);
-    const email = req.params.email;
-    
-    users.deleteOne({ email }, function (err, users) {
-        if (err) {
-                res.status(500).send({ message: err.message 
-            })
-            } else {
-                res.status(201).send({
-                    message: "Usuário excluido com sucesso",
-                    status: "true",
-            });
-            }
-        })   
-}
-
-const updateUser = (req, res) => {
-    console.log(req.url);
-    const email = req.params.email;
-
-    users.updateOne({ email }, { $set : req.body }, { upsert : true }, function(err){
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ 
-                message : "Usuário atualizado com sucesso",
-                status: "true"
-        });
-        }
-    })
-
-}
-
 const userLogin = (req, res) => {
     users.findOne({ email: req.body.email }, function(err, user) {
         if (err) {
@@ -108,7 +74,5 @@ const userLogin = (req, res) => {
 module.exports = {
     getUsers,
     createUser,
-    updateUser,
-    deleteUser,
     userLogin    
 }

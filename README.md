@@ -101,8 +101,6 @@ npm start
 | GET          | `/users`            | Retornar todas os usuários cadastrados | * Requer autenticação |
 | POST         | `/users` | Cadastrar novo usuário| Informar nome, email e senha  |
 | POST         | `/users/login` | Rota de login do usuário | Retorna o Token de acesso |
-| DELETE       | `/users` | Deletar um usuário | * Requer autenticação |
-| PUT          | `/users` |  Atualizar um usuário | * Requer autenticação |
 
 ### Contribuindo com o projeto
 
