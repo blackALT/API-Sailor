@@ -12,8 +12,12 @@ A proposta dessa API é construir uma base de dados com URLs de lojas falsas (Fa
 
 ### Estrutura do projeto
 
+A API trabalha com duas collections para armazenamento de duas principais estruturas: Usuários e URLs. Os usuários autenticados podem ter acesso as rotas autenticadas para alterar e deletar as submissões enviadas pelo público em geral. Isso serve para alterar o campo de análise, conferindo a submissão o status de analizada e, por tanto, elegível para ser exibida ao público.
+
+Os pacotes bcrypt e jwt do Node são usados para armazenar a senha do usuário de forma segura no Mongo e para criar o token de acesso as rotas autenticadas, que podem ser acessadas via POSTMAN usando o Bearer para trafegar o Token no Header da requisição.
+
 ```
-pasta-do-projeto
+Api-sailor
 ├── src
 │   ├── controller
 │   ├── model
@@ -24,7 +28,7 @@ pasta-do-projeto
 ```
 ### Json
 
-```json
+```json URL
 {
     "id": 1,
     "url": "http:xptofake.com",
@@ -35,11 +39,20 @@ pasta-do-projeto
 }
 ```
 
+```json USER
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@doe.com",
+    "passwd":"mypassword"
+}
+```
+
 ### Aprendizados
 
 O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização, hospedagem e configuração de aplicações na nuvem.
 
-### Instruções para utilização da API, 
+### Instruções para utilização da API 
 
 Para utilizar esta API é necessária a instalação das tecnologias NodeJS e MongoDB.
 
@@ -63,6 +76,9 @@ npm start
 
 ### Rotas disponíveis
 
+
+#### 1. Endpoint URL
+
 | Verbo        | Recurso             | Descrição                          | OBS:                              |
 | ------------ | --------------------| -----------------------------------|-----------------------------------|
 | GET          | `/urls`            | Retornar todas as urls submetidas e analisadas | Filtros disponíveis: Target e URL |
@@ -74,6 +90,16 @@ npm start
 | DELETE       | `/urls/submissions/:id`        | Deletar uma submissão a partir do ID        | * Requer autenticação |
 | DELETE       | `/urls/submissions`        | Deletar uma submissão a partir da URL        |* Requer autenticação /Filtros disponíveis: URL |
 | PATCH        | `/urls/submissions/:id`  | Atualizar atributos da submissão a partir do ID | * Requer autenticação |
+
+#### 2. Endpoint Users
+
+| Verbo        | Recurso             | Descrição                          | OBS:                              |
+| ------------ | --------------------| -----------------------------------|-----------------------------------|
+| GET          | `/users`            | Retornar todas os usuários cadastrados | * Requer autenticação |
+| POST         | `/users` | Cadastrar novo usuário| Informar nome, email e senha  |
+| POST         | `/users/login` | Rota de login do usuário | Retorna o Token de acesso |
+| DELETE       | `/users` | Retornar todas as urls | * Requer autenticação |
+| PUT          | `/users` |  Atualizar um usuário a partir do ID | * Requer autenticação |
 
 ### Contribuindo com o projeto
 
