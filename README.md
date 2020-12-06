@@ -28,7 +28,9 @@ Api-sailor
 ```
 ### Json
 
-```json URL
+#### URLs
+
+```json
 {
     "id": 1,
     "url": "http:xptofake.com",
@@ -39,7 +41,8 @@ Api-sailor
 }
 ```
 
-```json USER
+#### Users
+```json
 {
     "id": 1,
     "name": "John Doe",
@@ -50,7 +53,7 @@ Api-sailor
 
 ### Aprendizados
 
-O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização, hospedagem e configuração de aplicações na nuvem.
+O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização com o JWT, hospedagem e configuração de aplicações na nuvem.
 
 ### Instruções para utilização da API 
 
@@ -77,7 +80,7 @@ npm start
 ### Rotas disponíveis
 
 
-#### 1. Endpoint URL
+#### 1. Endpoint URLs
 
 | Verbo        | Recurso             | Descrição                          | OBS:                              |
 | ------------ | --------------------| -----------------------------------|-----------------------------------|
@@ -98,8 +101,8 @@ npm start
 | GET          | `/users`            | Retornar todas os usuários cadastrados | * Requer autenticação |
 | POST         | `/users` | Cadastrar novo usuário| Informar nome, email e senha  |
 | POST         | `/users/login` | Rota de login do usuário | Retorna o Token de acesso |
-| DELETE       | `/users` | Retornar todas as urls | * Requer autenticação |
-| PUT          | `/users` |  Atualizar um usuário a partir do ID | * Requer autenticação |
+| DELETE       | `/users` | Deletar um usuário | * Requer autenticação |
+| PUT          | `/users` |  Atualizar um usuário | * Requer autenticação |
 
 ### Contribuindo com o projeto
 
