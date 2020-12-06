@@ -11,9 +11,9 @@ router.post("/", controller.postUrl);
 // Rotas autenticadas
 router.get("/submissions", controller.getSubmissions); // Apenas não analisadas
 router.get("/backlog", controller.getBacklog); // retorna todas
-router.put("/submissions/:id", controller.putUrl);
+router.put("/submissions/:id", controller.updadeUrl);
 router.delete("/submissions/:id", controller.deleteByID);
 router.delete("/submissions", controller.deleteByUrl);
-router.patch("/submissions/:id", controller.patchUrl);
+router.patch("/submissions/:id", controller.updateAnalysisUrl);
 
 module.exports = router

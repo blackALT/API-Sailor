@@ -101,20 +101,6 @@ const getBacklog = (req, res) => {
     })
 }
 
-const putUrl = (req, res) => {
-    console.log(req.url);
-    const id = req.params.id;
-
-    urls.updateMany({ id }, { $set : req.body }, { upsert : true }, function(err){
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message : "URL atualizada com sucesso"})
-        }
-    })
-
-}
-
 const deleteByUrl = (req, res) => {
     console.log(req.url);
     const url = req.query.url;
@@ -147,11 +133,28 @@ const deleteByID = (req, res) => {
         })
 }    
 
-const patchUrl = (req, res) => {
+const updadeUrl = (req, res) => {
     console.log(req.url);
-    const id = req.params.id;   
+    const id = req.params.id;
+
+    urls.updateOne({ id }, { $set : req.body }, { upsert : true }, function(err){
+        if (err) {
+            res.status(500).send({ message: err.message })
+        } else {
+            res.status(200).send({ 
+                message : "URL atualizada com sucesso",
+            status: "true"
+        })
+        }
+    })
+
+}
+
+const updateAnalysisUrl = (req, res) => {
+    console.log(req.url);
+    const id = req.params.id;  
  
-    urls.updateMany({ id },{ $set: req.body },{ upsert: true },function (err) {
+    urls.updateOne({ id },{ $set: {target: req.body.target, isAnalyzed: req.body.isAnalyzed, isMalicious: req.body.isMalicious} },{ upsert: true },function (err) {
         if (err) {
             res.status(500).send(err)
         } else {
@@ -169,8 +172,8 @@ module.exports = {
     getSubmissions,
     getMalicious,
     postUrl,
-    putUrl,
+    updadeUrl,
     deleteByUrl,
     deleteByID,
-    patchUrl
+    updateAnalysisUrl
 }
