@@ -5,6 +5,18 @@ const SECRET = process.env.SECRET;
 
 const getUsers = (req, res) => {
     console.log(req.url);
+    const authHeader = req.get('authorization');
+
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
     users.find(function (err, users){
     if (err) {
             res.status(500).send({ 
@@ -14,6 +26,7 @@ const getUsers = (req, res) => {
             res.status(200).send(users)
         }
     })
+})
 }
 
 const createUser = (req, res) => {
