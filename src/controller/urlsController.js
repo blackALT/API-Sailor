@@ -73,8 +73,7 @@ const createSubmission = (req, res) => {
                 } else {
                     res.status(201).send({
                         message: "URL cadastrada com sucesso",
-                        status: "true",
-                        url
+                        status: "true"
                     });
                 }
             });
@@ -156,8 +155,7 @@ const deleteByUrl = (req, res) => {
             } else {
                 res.status(201).send({
                     message: "url excluida com sucesso",
-                    status: "true",
-                    url
+                    status: "true"
             });
             }
         })
@@ -186,8 +184,7 @@ const deleteByID = (req, res) => {
             } else {
                 res.status(201).send({
                     message: "url excluida com sucesso",
-                    status: "true",
-                    url
+                    status: "true"
             });
             }
         })
