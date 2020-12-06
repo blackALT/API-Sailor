@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 require('dotenv-safe').config();
 const urls = require("./route/urlsRoute")
 const index = require("./route/index")
+const users = require("./route/userRoute");
 
 const app = express()
 
@@ -32,5 +33,6 @@ app.use(function (req, res, next) {
 
 app.use("/", index)
 app.use("/urls", urls);
+app.use("/users", users);
   
 module.exports = app

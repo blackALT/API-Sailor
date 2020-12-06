@@ -6,7 +6,7 @@ const controller = require("../controller/urlsController")
 // Rotas não autenticadas
 router.get("/", controller.getAnalyzed); // Apenas analisadas
 router.get("/malicious", controller.getMalicious); // Alvo analisado e malicioso
-router.post("/", controller.postUrl);
+router.post("/", controller.createSubmission);
 
 // Rotas autenticadas
 router.get("/submissions", controller.getSubmissions); // Apenas não analisadas

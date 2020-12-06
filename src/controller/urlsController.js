@@ -26,9 +26,9 @@ const getAnalyzed = (req, res) => {
     } else {
         urls.find({ isAnalyzed: true}, function (err, urls) {
             if (err) {
-                res.status(500).send({ message: err.message })
+                    res.status(500).send({ message: err.message })
                 } else {
-                res.status(200).send(urls);
+                    res.status(200).send(urls);
                 }
             })
     }
@@ -56,13 +56,13 @@ const getMalicious = (req, res) => {
     }
 }
 
-const postUrl = (req, res) => {
+const createSubmission = (req, res) => {
     console.log(req.url);
     urls.countDocuments((err, count) => {
         if (err) {
             res.status(424).send({message: err.message});
         } else {
-            let url = new urls(req.body);
+            const url = new urls(req.body);
             url.id = count +1;
             url.save(function (err) {
                 if (err) {
@@ -94,9 +94,9 @@ const getBacklog = (req, res) => {
     console.log(req.url);
     urls.find(function (err, urls){
     if (err) {
-        res.status(500).send({ message: err.message })
+            res.status(500).send({ message: err.message })
         } else {
-        res.status(200).send(urls)
+            res.status(200).send(urls)
         }
     })
 }
@@ -107,12 +107,11 @@ const deleteByUrl = (req, res) => {
     
     urls.deleteMany({ url }, function (err, urls) {
         if (err) {
-            res.status(500).send({ message: err.message 
-            })
+                res.status(500).send({ message: err.message })
             } else {
-            res.status(200).send({
-                message: "url excluida com sucesso",
-                status: "true"
+                res.status(201).send({
+                    message: "url excluida com sucesso",
+                    status: "true"
             });
             }
         })   
@@ -126,9 +125,9 @@ const deleteByID = (req, res) => {
                 res.status(500).send({ message: err.message })
             } else {
                 res.status(201).send({
-                message: "url excluida com sucesso",
-                status: "true"
-            })
+                    message: "url excluida com sucesso",
+                    status: "true"
+            });
             }
         })
 }    
@@ -143,8 +142,8 @@ const updadeUrl = (req, res) => {
         } else {
             res.status(200).send({ 
                 message : "URL atualizada com sucesso",
-            status: "true"
-        })
+                status: "true"
+        });
         }
     })
 
@@ -159,9 +158,9 @@ const updateAnalysisUrl = (req, res) => {
             res.status(500).send(err)
         } else {
             res.status(200).send({
-            mensagem: "URL atualizada com sucesso!",
-            status: "true"
-        })
+                mensagem: "URL atualizada com sucesso!",
+                status: "true"
+            });
         }
     })
 }
@@ -171,7 +170,7 @@ module.exports = {
     getAnalyzed,
     getSubmissions,
     getMalicious,
-    postUrl,
+    createSubmission,
     updadeUrl,
     deleteByUrl,
     deleteByID,
