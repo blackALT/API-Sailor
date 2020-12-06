@@ -61,19 +61,25 @@ const getMalicious = (req, res) => {
 
 const createSubmission = (req, res) => {
     console.log(req.url);
-    urls.countDocuments((err, count) => {
-        if (err) {
-            res.status(424).send({message: err.message});
+    urls.findOne({ url: req.body.url }, function(err, url) {
+        if (url) {
+            res.status(404).send({message: "URL já cadastrada!"});
         } else {
-            const url = new urls(req.body);
-            url.id = count +1;
-            url.save(function (err) {
+            urls.countDocuments((err, count) => {
                 if (err) {
-                    res.status(500).send({ message: err.message })
+                    res.status(424).send({message: err.message});
                 } else {
-                    res.status(201).send({
-                        message: "URL cadastrada com sucesso",
-                        status: "true"
+                    const url = new urls(req.body);
+                    url.id = count +1;
+                    url.save(function (err) {
+                        if (err) {
+                            res.status(500).send({ message: err.message })
+                        } else {
+                            res.status(201).send({
+                                message: "URL cadastrada com sucesso",
+                                status: "true"
+                            });
+                        }
                     });
                 }
             });
