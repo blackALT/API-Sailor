@@ -58,7 +58,7 @@ const deleteUser = (req, res) => {
         })   
 }
 
-const updadeUser = (req, res) => {
+const updateUser = (req, res) => {
     console.log(req.url);
     const email = req.params.email;
 
@@ -95,7 +95,7 @@ const userLogin = (req, res) => {
 module.exports = {
     getUsers,
     createUser,
-    updadeUser,
+    updateUser,
     deleteUser,
     userLogin    
 }

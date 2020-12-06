@@ -1,4 +1,7 @@
-const urls = require('../model/urlsModel')
+const urls = require('../model/urlsModel');
+const SECRET = process.env.SECRET
+const jwt = require('jsonwebtoken');
+
 
 // Rotas não autenticadas
 
@@ -81,6 +84,19 @@ const createSubmission = (req, res) => {
 // Rotas autenticadas
 const getSubmissions = (req, res) => {
     console.log(req.url);
+    const authHeader = req.get('authorization');
+
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
+
     urls.find({ isAnalyzed: false }, function (err, urls) {
         if (err) {
             res.status(500).send({ message: err.message })
@@ -88,23 +104,51 @@ const getSubmissions = (req, res) => {
             res.status(200).send(urls);
           }
       })
+    })
 }
 
 const getBacklog = (req, res) => {
     console.log(req.url);
-    urls.find(function (err, urls){
+    const authHeader = req.get('authorization');
+
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
+    
+        urls.find(function (err, urls){
     if (err) {
             res.status(500).send({ message: err.message })
         } else {
             res.status(200).send(urls)
         }
     })
+})
 }
 
 const deleteByUrl = (req, res) => {
     console.log(req.url);
     const url = req.query.url;
     
+    const authHeader = req.get('authorization');
+
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
+
     urls.deleteMany({ url }, function (err, urls) {
         if (err) {
                 res.status(500).send({ message: err.message })
@@ -114,12 +158,26 @@ const deleteByUrl = (req, res) => {
                     status: "true"
             });
             }
-        })   
+        })
+    })
 }
 
 const deleteByID = (req, res) => {
     console.log(req.url);
     const id = req.params.id;
+    const authHeader = req.get('authorization');
+
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
+
         urls.deleteOne({ id }, function (err, url){
             if (err) {
                 res.status(500).send({ message: err.message })
@@ -130,12 +188,25 @@ const deleteByID = (req, res) => {
             });
             }
         })
+    })
 }    
 
 const updadeUrl = (req, res) => {
     console.log(req.url);
     const id = req.params.id;
+    const authHeader = req.get('authorization');
 
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
+    
     urls.updateOne({ id }, { $set : req.body }, { upsert : true }, function(err){
         if (err) {
             res.status(500).send({ message: err.message })
@@ -146,12 +217,26 @@ const updadeUrl = (req, res) => {
         });
         }
     })
+})
 
 }
 
 const updateAnalysisUrl = (req, res) => {
     console.log(req.url);
-    const id = req.params.id;  
+    const id = req.params.id;
+
+    const authHeader = req.get('authorization');
+
+    if (!authHeader) {
+        return res.status(401).send('Erro! Informe o Token');
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    jwt.verify(token, SECRET, function(err){
+        if(err){
+            res.status(403).send('Erro! Token desconhecido');
+        }
  
     urls.updateOne({ id },{ $set: {target: req.body.target, isAnalyzed: req.body.isAnalyzed, isMalicious: req.body.isMalicious} },{ upsert: true },function (err) {
         if (err) {
@@ -163,6 +248,7 @@ const updateAnalysisUrl = (req, res) => {
             });
         }
     })
+})
 }
 
 module.exports = {
