@@ -23,7 +23,8 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.17",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "validator": "^13.5.1"
   },
   "engines": {
     "node": "v12.18.3"
