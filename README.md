@@ -57,6 +57,9 @@ O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos 
 
 ### Instruções para utilização da API 
 
+#### Documentação disponível também no Swagger
+[Reprograna - Sailor API](https://app.swaggerhub.com/apis-docs/blackALT/Sailor/1.0.0)
+
 Para utilizar esta API é necessária a instalação das tecnologias NodeJS e MongoDB.
 
 - *Instalação*

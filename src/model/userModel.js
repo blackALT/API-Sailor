@@ -3,7 +3,8 @@ const { isEmail } = require('validator');
 
 const userSchema = new mongoose.Schema({
     id: { 
-        type: Number 
+        type: Number,
+        unique: true 
     },
     name: { 
         type: String, 
