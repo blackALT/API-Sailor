@@ -71,17 +71,6 @@ Api-sailor
     "passwd":"mypassword"
 }
 ```
-### Caso de uso e fluxograma
-
-O fluxo principal da API consiste na consulta de URLs analisadas que são entregues na rota principal. Um usuário pode consultar apenas as consideradas maliciosas e fazer filtros específicos. As URLs cadastradas são armazenadas com o status ```isAnalyzed: false``` e ```isMalicious: false```. Esse status poderá ser mudado por um usuário autenticado que fará a análise e comprovará a malícia da URL por meio da rota autenticada ```/urls/submissions```.
-
-O Fluxograma a seguir detalha o caso de uso básico da API:
-
-![APISailor(3)](https://user-images.githubusercontent.com/34174851/101967318-6e65e880-3bf9-11eb-9e8d-f08a535ef2f5.png)
-
-## Aprendizados
-
-O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização com o JWT, hospedagem e configuração de aplicações na nuvem.
 
 ## Instruções para utilização da API 
 
@@ -107,7 +96,7 @@ npm start
 
 ## Rotas disponíveis
 
-#### Endpoint URLs
+### Endpoint URLs
 
 | Verbo        | Recurso             | Descrição                          | OBS:                              |
 | ------------ | --------------------| -----------------------------------|-----------------------------------|
@@ -121,13 +110,21 @@ npm start
 | DELETE       | `/urls/submissions`        | Deletar uma submissão a partir da URL        |* Requer autenticação /Filtros disponíveis: URL |
 | PATCH        | `/urls/submissions/:id`  | Atualizar atributos da submissão a partir do ID | * Requer autenticação |
 
-#### Endpoint Users
+### Endpoint Users
 
 | Verbo        | Recurso             | Descrição                          | OBS:                              |
 | ------------ | --------------------| -----------------------------------|-----------------------------------|
 | GET          | `/users`            | Retornar todas os usuários cadastrados | * Requer autenticação |
 | POST         | `/users` | Cadastrar novo usuário| Informar nome, email e senha  |
 | POST         | `/users/login` | Rota de login do usuário | Retorna o Token de acesso |
+
+### Caso de uso e fluxograma
+
+O fluxo principal da API consiste na consulta de URLs analisadas que são entregues na rota principal. Um usuário pode consultar apenas as consideradas maliciosas e fazer filtros específicos. As URLs cadastradas são armazenadas com o status ```isAnalyzed: false``` e ```isMalicious: false```. Esse status poderá ser mudado por um usuário autenticado que fará a análise e comprovará a malícia da URL por meio da rota autenticada ```/urls/submissions```.
+
+O Fluxograma a seguir detalha o caso de uso básico da API:
+
+![APISailor(3)](https://user-images.githubusercontent.com/34174851/101967318-6e65e880-3bf9-11eb-9e8d-f08a535ef2f5.png)
 
 ## Proposta do Projeto
 
@@ -139,7 +136,11 @@ A engenharia social usada por estes usuários mal intencionados é promovida vis
 
 [![](https://img.shields.io/badge/API-Sailor-blueviolet)](https://reprograma-sailor.herokuapp.com/)
 
-### Contribuindo com o projeto
+## Aprendizados
+
+O Bootcamp da reprograma proporcionou um contato amplo e prático dos conceitos de programação, desde os mais básicos, como a construção da lógica de programação com Git/GitHbu, JavaScript e suas principais partículas (variaveis, laços de repetição, arrays e objetos) até as estruturas de desenvolvimento web, com a API RESTFull, arquitetura MVC, protocolo HTTP e seus verbos, Banco de Dados não relacional com MongoDB, autenticação e autorização com o JWT, hospedagem e configuração de aplicações na nuvem.
+
+## Contribuindo com o projeto
 
 1. Faça o fork do projeto
 2. Crie uma branch para sua modificação (git checkout -b feature/any)
@@ -147,5 +148,4 @@ A engenharia social usada por estes usuários mal intencionados é promovida vis
 4. Push (git push origin feature/any)
 5. Crie um novo Pull Request
 
-Apoio:
 [![reprograma](https://user-images.githubusercontent.com/34174851/101967678-44f98c80-3bfa-11eb-9a5b-187ec3245814.jpg)](https://github.com/reprograma/)
