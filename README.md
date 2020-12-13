@@ -1,6 +1,6 @@
  [![Deploy on heroku](https://img.shields.io/badge/deploy-heroku.com-blueviolet)](https://reprograma-sailor.herokuapp.com/) [![](https://img.shields.io/badge/database-mongodb-green)](https://www.mongodb.com/) [![](https://img.shields.io/badge/documentation-swagger-informational)](https://app.swaggerhub.com/apis-docs/blackALT/Sailor/1.0.0)
 # API Sailor
-Projeto final do bootcamp Back-end - Porto Digital em parceria com o projeto MINAS.
+Projeto final do bootcamp Backend - Em parceria com o projeto MINAS do Porto Digital.
 
 ![Sailor-logo](https://user-images.githubusercontent.com/34174851/101970410-f69fba00-3c08-11eb-96e9-bfac201ef22c.png)
 
